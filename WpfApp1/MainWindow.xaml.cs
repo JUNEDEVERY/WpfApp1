@@ -22,12 +22,13 @@ namespace WpfApp1
     {
         public MainWindow()
         {
+
             InitializeComponent();
             Model.tbResult = tbResult;
             Model.tbSignText = tbSign;
-   
+            
             cmbOperation.ItemsSource = Model.cmbOperation;
-            cmbOperation.SelectedIndex = 0;
+            
 
         }
 

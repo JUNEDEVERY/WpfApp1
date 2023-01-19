@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
-    <Grid Margin="0,0,1,2">
+    <Grid Margin="0,0,1,2" Background="Azure">
         <Grid.RowDefinitions>
             <RowDefinition Height="22*"></RowDefinition>
             <RowDefinition Height="5*"></RowDefinition>

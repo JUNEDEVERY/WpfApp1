@@ -10,10 +10,11 @@ namespace WpfApp1
 {
     public static class Model
     {
-
+        // инициаилизуем наши "типо переменные, находящиеся на main window xaml"
         public static string tbFirst;
         public static string tbSecond;
 
+        // создаем лист, с данными, которые будут использоваться в комбобоксе в качестве выбранного элемента. такая же аналогия со знаками. взависимости от выбранного эл-та ко-кса меняется знак
         public static List<string> cmbOperation = new List<string>() { "Сложение", "Умножение", "Деление", "Вычитание" };
         public static List<string> tbSign = new List<string>() { "+", "*", "/", "-" };
 
@@ -22,12 +23,9 @@ namespace WpfApp1
         public static TextBlock tbResult = new TextBlock();
 
 
-        public static int tbSignOperation
+        public static int tbSignOperation // передаем знак из листа tbsign
         {
             set => tbSignText.Text = tbSign[value];
-
-
-
         }
         public static int tbOperationResult
         {
@@ -40,7 +38,7 @@ namespace WpfApp1
 
                     switch (value)
                     {
-                        case 0:
+                        case 0: // кейсы - айдишники выбранного  элементы комбобокса
                             tbResult.Text = Convert.ToString(firstVariable + secondVariable);
 
                             break;
@@ -49,8 +47,15 @@ namespace WpfApp1
 
                             break;
                         case 2:
-                            tbResult.Text = Convert.ToString(firstVariable / secondVariable);
+                            if (secondVariable == 0)
+                            {
+                                tbResult.Text = "Вы что? Делить на 0 нельзя";
 
+                            }
+                            else
+                            {
+                                tbResult.Text = Convert.ToString(firstVariable / secondVariable);
+                            }
                             break;
                         case 3:
                             tbResult.Text = Convert.ToString(firstVariable - secondVariable);
